@@ -98,16 +98,16 @@
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
 
-(use-package hlinum
-  :config
-  (hlinum-activate))
+;; (use-package hlinum
+;;   :config
+;;   (hlinum-activate))
 
-(use-package linum
-  :config
-  (setq linum-format " %3d ")
-  (global-linum-mode nil)
-  ;; (global-display-line-numbers-mode t)
-  )
+;; (use-package linum
+;;   :config
+;;   (setq linum-format " %3d ")
+;;   (global-linum-mode nil)
+;; ;; (global-display-line-numbers-mode t)
+;;   )
 
 (use-package magit
   :config
@@ -168,7 +168,9 @@
 
 (use-package pdf-tools
   :init
-  (pdf-loader-install))
+  (pdf-loader-install)
+  :hook ((pdf-view-mode-hook . (lambda() (blink-cursor-mode 0)))))
+;; (pdf-view-mode-hook . (lambda() (linum-mode -1))))
 
 (use-package polymode)
 

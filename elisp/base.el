@@ -86,6 +86,10 @@
 
 (global-visual-line-mode 1)
 
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode)
+  (global-hl-line-mode))
+
 ;; (set-frame-font "JetBrains Mono Regular 11" nil t)
 
 (if ( version< "27.0" emacs-version ) ; )
